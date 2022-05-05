@@ -1,0 +1,51 @@
+{
+  "name": "canopy-web",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "source": "src/index.js",
+  "module": "dist/index.mjs",
+  "scripts": {
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "canopy": "^0.4.0",
+    "events": "^3.3.0",
+    "memfs": "^3.4.1",
+    "parcel": "^2.5.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.4"
+  },
+  "alias": {
+    "path": "path-browserify",
+    "fs": "memfs",
+    "process": "process/browser.js",
+    "util": "util/util.js",
+    "stream": "stream-browserify",
+    "events": "events",
+    "buffer": "buffer",
+    "assert": "assert"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs"
+    }
+  },
+  "targets": {
+    "module": {
+      "includeNodeModules": {
+        "events": true,
+        "buffer": true,
+        "assert": true
+      },
+      "optimize": false
+    }
+  },
+  "browserslist": "since 2020, Node 16"
+}
